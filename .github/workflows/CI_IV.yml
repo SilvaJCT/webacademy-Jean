@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Verificar arquivos obrigatórios
-        run: |
+        run:  |
           echo "Validando arquivos obrigatórios..."
 
           # Lista de arquivos obrigatórios
