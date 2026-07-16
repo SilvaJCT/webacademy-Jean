@@ -1,0 +1,23 @@
+name: Second Workflow
+
+on:
+  push:
+jobs:
+  primeiro-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Primeiro passo"
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Exibir data e hora
+        run: date
+      - name: Exibir informações do sistema
+        run: uname -a
+      - name: Exibir versão do Git
+        run: git --version
+      - name: Exibir conteúdo do README.md
+        run: cat README.md
+      - name: Listar arquivos detalhadamente
+        run: ls -la
+
+
