@@ -27,4 +27,4 @@ jobs:
             fi
           done
 
-          echo " Todos os arquivos obrigatórios estão presentes!"
+          echo " Os arquivos obrigatórios estão presentes!"
