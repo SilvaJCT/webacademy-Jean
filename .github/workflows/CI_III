@@ -1,0 +1,22 @@
+name: third Workflow
+
+on:
+  push:
+jobs:
+  primeiro-job:
+    runs-on: ubuntu-latest
+    env:
+      Curso: "GitHub Actions"
+    steps:
+      - run: echo "Primeiro passo"
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Exibir nome do curso
+        run: echo "Nome do curso: ${{ env.Curso }}"
+      - name: Exibir usuário que executou o workflow
+        run: echo "Usuário: ${{ github.actor }}"
+      - name: Exibir o nome do repositório
+        run: echo "Repositório: ${{ github.repository }}"
+      - name: Exibir o nome da branch utilizada
+        run: echo "Branch: ${{ github.ref }}"
+      

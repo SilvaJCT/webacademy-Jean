@@ -6,7 +6,8 @@ on:
 jobs:
   primeiro-job:
     runs-on: ubuntu-latest
-
+    env:
+      Curso: "GitHub Actions"
     steps:
       - name: Primeiro passo
         run: echo "Primeiro passo"
