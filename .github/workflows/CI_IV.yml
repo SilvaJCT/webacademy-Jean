@@ -1,0 +1,30 @@
+name: Validar Estrutura do Projeto
+
+on:
+  push:
+
+jobs:
+  validar-arquivos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Verificar arquivos obrigatórios
+        run: |
+          echo "Validando arquivos obrigatórios..."
+
+          # Lista de arquivos obrigatórios
+          REQUIRED_FILES=("README.md" "LICENSE" ".gitignore")
+
+          for FILE in "${REQUIRED_FILES[@]}"; do
+            if [ ! -f "$FILE" ]; then
+              echo "❌ ERRO: Arquivo obrigatório não encontrado: $FILE"
+              exit 1
+            else
+              echo "✔ Arquivo encontrado: $FILE"
+            fi
+          done
+
+          echo " Todos os arquivos obrigatórios estão presentes!"
